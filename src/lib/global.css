@@ -1,11 +1,35 @@
-:root{
+@font-face {
+    font-family: "Inter";
+    src: url("$lib/font/Inter-Medium.ttf") format("truetype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("$lib/font/Inter-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("$lib/font/Inter-Bold.ttf") format("truetype");
+    font-weight: 700;
+}
+
+
+:root {
     --primary-color: #222222;
-    --secondary-color:#ffffff;
+    --secondary-color: #ffffff;
     --color-neural: #E7ECEF;
     --color-bg-accent: #F7F7F7;
     --color-error: #D22E45;
-    --color-success: #439E5D; 
+    --color-success: #439E5D;
     --color-price: #1AA5B7;
     --color-cta: #358DD2;
 
+    --font-family: "Inter", sans-serif;
+}
+
+body{
+    font-family: var(--font-family);
 }
