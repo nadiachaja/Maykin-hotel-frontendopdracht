@@ -3,8 +3,8 @@
 </script>
 
 <svelte:head>
-    <title>Hotel</title>
-    <meta name="description" content="Hotel" />
+    <title>Hotels</title>
+    <meta name="description" content="Hotels" />
 </svelte:head>
 
 <div>
