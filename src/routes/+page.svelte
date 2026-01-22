@@ -1,2 +1,20 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script>
+
+</script>
+
+<svelte:head>
+    <title>Hotel</title>
+    <meta name="description" content="Hotel" />
+</svelte:head>
+
+<div>
+    <article>
+        <img src="" alt="" />
+        <div>
+            <h1></h1>
+            <p></p>
+            <p></p>
+            <p></p>
+        </div>
+    </article>
+</div>
