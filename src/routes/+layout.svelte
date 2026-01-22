@@ -10,7 +10,12 @@
 </svelte:head>
 
 <header>
-    <p>My Hotels</p>
+    <h1>My Hotels</h1>
 </header>
 
 {@render children()}
+
+
+<style>
+
+</style>
