@@ -1,8 +1,6 @@
 <script>
-export let data;
-  
-  const { hotels } = data;
-
+    export let data;
+    const { hotels } = data;
 </script>
 
 <svelte:head>
@@ -13,15 +11,18 @@ export let data;
 <div>
     <article>
         <img src="" alt="" />
-        <div>
-            <h2></h2>
-            <p></p>
-            <p></p>
-            <p></p>
-        </div>
+        {#each hotels as hotel}
+            <div>
+                <h2>{hotel.HotelInfo.Name}</h2>
+                <p></p>
+                <p></p>
+                <p></p>
+            </div>
+        {/each}
     </article>
 </div>
 
+<!-- 
 <h1>Hotels</h1>
 <div class="grid">
   {#each hotels as hotel}
@@ -31,9 +32,7 @@ export let data;
       <a href="/hotel/{hotel.HotelInfo.HotelID}">Bekijk details</a>
     </div>
   {/each}
-</div>
-
+</div> -->
 
 <style>
-
 </style>
