@@ -14,7 +14,8 @@
         {#each hotels as hotel}
             <div>
                 <h2>{hotel.HotelInfo.Name}</h2>
-                <p></p>
+                <p>Available</p>
+                <p>{hotel.HotelInfo.Price.replace('*', '')}</p>
                 <p></p>
                 <p>
                     Dit hotel biedt moderne en comfortabele accommodaties,
