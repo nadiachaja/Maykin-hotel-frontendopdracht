@@ -17,5 +17,15 @@
 
 
 <style>
+header{
+	background-color: var(--primary-color);
+	color: var(--secondary-color);
+}
 
+h1{
+	margin: 0;
+	padding: .5em;
+	font-size: var(--font-size-medium);
+	font-weight: var(--font-weight-normal);
+}
 </style>

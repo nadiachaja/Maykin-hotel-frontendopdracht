@@ -28,8 +28,24 @@
     --color-cta: #358DD2;
 
     --font-family: "Inter", sans-serif;
+
+    --line-height:1.4;
+
+    --font-size-extra-large: 2em;
+    --font-size-large: 1.5em;
+    --font-size-medium: 1.25em;
+    --font-size-small: 1em;
+
+    --font-weight-normal:500;
+    --font-weight-semi-bold:600;
+    --font-weight-bold:700;
+
 }
 
 body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: var(--font-family);
+    line-height: var(--line-height);
 }

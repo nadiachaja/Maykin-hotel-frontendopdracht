@@ -26,7 +26,6 @@
                     faciliteiten die bijdragen aan een ontspannen en zorgeloos
                     verblijf.
                 </p>
-                <!-- <p>{hotel.Reviews[0].Content.substring(0, 150)}...</p> -->
             </div>
         {/each}
     </article>
@@ -40,9 +39,11 @@
       <h2>{hotel.HotelInfo.Name}</h2>
       <p>{hotel.HotelInfo.Address.City}, {hotel.HotelInfo.Address.Country}</p>
       <a href="/hotel/{hotel.HotelInfo.HotelID}">Bekijk details</a>
+      <p>{hotel.Reviews[0].Content.substring(0, 150)}...</p>
     </div>
   {/each}
 </div> -->
 
 <style>
+
 </style>
