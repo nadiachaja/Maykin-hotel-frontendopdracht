@@ -12,27 +12,27 @@
 <div class="container">
     <article>
         {#each hotels as hotel}
-        <a href="/hotel/{hotel.id}">
-            <div class="all-info">
-                <img src={outsidehotel} alt="" />
-                <div class="hotel-info">
-                    <h2>{hotel.HotelInfo.Name}</h2>
-                    <div class="info-extra">
-                    <p class="available">Available</p>
-                    <p class="price">{hotel.HotelInfo.Price.replace("*", "")}</p>
+            <a href="/hotel/{hotel.id}">
+                <div class="all-info">
+                    <img src={outsidehotel} alt="" />
+                        <h2>{hotel.HotelInfo.Name}</h2>
+                        <div class="info-extra">
+                            <p class="available">Available</p>
+                            <p class="price">
+                                {hotel.HotelInfo.Price.replace("*", "")}
+                            </p>
+                        </div>
+                    <p class="description">
+                        Dit hotel biedt moderne en comfortabele accommodaties,
+                        ideaal voor zowel zakelijke reizigers als
+                        vakantiegangers. De kamers zijn ruim opgezet en van alle
+                        gemakken voorzien, waaronder luxe bedden en een fijne
+                        werkplek. Gasten kunnen rekenen op een uitstekende
+                        service, een gastvrije sfeer en faciliteiten die
+                        bijdragen aan een ontspannen en zorgeloos verblijf.
+                    </p>
                 </div>
-                </div>
-                <p class="description">
-                    Dit hotel biedt moderne en comfortabele accommodaties,
-                    ideaal voor zowel zakelijke reizigers als vakantiegangers.
-                    De kamers zijn ruim opgezet en van alle gemakken voorzien,
-                    waaronder luxe bedden en een fijne werkplek. Gasten kunnen
-                    rekenen op een uitstekende service, een gastvrije sfeer en
-                    faciliteiten die bijdragen aan een ontspannen en zorgeloos
-                    verblijf.
-                </p>
-            </div>
-        </a>
+            </a>
         {/each}
     </article>
 </div>
@@ -48,7 +48,7 @@
         gap: 2em;
     }
 
-    a{
+    a {
         text-decoration: none;
     }
 
@@ -63,19 +63,7 @@
         justify-content: space-between;
     }
 
-    .hotel-info {
-        @media (min-width: 600px) {
-            display: grid;
-            grid-template-columns: 1fr max-content max-content;
-            gap: 1em;
-        }
-
-        @media (min-width: 600px) {
-            display: unset;
-        }
-    }
-
-    .info-extra{
+    .info-extra {
         display: flex;
         gap: 1em;
         margin: 0em 1em;
@@ -120,7 +108,7 @@
         font-size: var(--font-size-small);
         color: var(--primary-color);
         display: -webkit-box;
-        -webkit-line-clamp: 3; 
+        -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
         overflow: hidden;
         margin: 1em;
