@@ -70,7 +70,7 @@
     }
 
     img {
-        border-radius: 0.5em;
+        border-radius: .5em .5em 0em 0em;
         object-fit: cover;
         width: 100%;
         height: auto;
