@@ -1,7 +1,9 @@
 <script>
     export let data;
     const { hotels } = data;
-    import outsidehotel from "$lib/assets/hotels.jpg";
+    import outsidehotelJPG from "$lib/assets/hotels.jpg";
+    import outsidehotelWEBP from "$lib/assets/hotels.webp";
+    import outsidehotelAVIF from "$lib/assets/hotels.avif";
 </script>
 
 <svelte:head>
@@ -14,7 +16,19 @@
         {#each hotels as hotel}
             <a href="/hotel/{hotel.id}">
                 <div class="all-info">
-                    <img src={outsidehotel} alt="" />
+
+                    <picture>
+                        <source srcSet={outsidehotelAVIF} type="image/avif" />
+                        <source srcSet={outsidehotelWEBP} type="image/webp" />
+                        <img
+                          src={outsidehotelJPG}
+                          alt="Outside hotel"
+                          width="300"
+                          height="200"
+                        />
+                      </picture>
+
+                    <!-- <img src={outsidehotel} alt="" height="200" width="300" /> -->
                         <h2>{hotel.HotelInfo.Name}</h2>
                         <div class="info-extra">
                             <p class="available">Available</p>
