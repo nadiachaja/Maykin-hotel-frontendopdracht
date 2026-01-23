@@ -1,6 +1,7 @@
 <script>
     export let data;
     const { hotels } = data;
+    import outsidehotel from "$lib/assets/hotels.jpg";
 </script>
 
 <svelte:head>
@@ -8,16 +9,20 @@
     <meta name="description" content="Hotels" />
 </svelte:head>
 
-<div>
+<div class="container">
     <article>
-        <img src="" alt="" />
         {#each hotels as hotel}
-            <div>
-                <h2>{hotel.HotelInfo.Name}</h2>
-                <p>Available</p>
-                <p>{hotel.HotelInfo.Price.replace('*', '')}</p>
-                <p></p>
-                <p>
+        <a href="/hotel/{hotel.id}">
+            <div class="all-info">
+                <img src={outsidehotel} alt="" />
+                <div class="hotel-info">
+                    <h2>{hotel.HotelInfo.Name}</h2>
+                    <div class="info-extra">
+                    <p class="available">Available</p>
+                    <p class="price">{hotel.HotelInfo.Price.replace("*", "")}</p>
+                </div>
+                </div>
+                <p class="description">
                     Dit hotel biedt moderne en comfortabele accommodaties,
                     ideaal voor zowel zakelijke reizigers als vakantiegangers.
                     De kamers zijn ruim opgezet en van alle gemakken voorzien,
@@ -27,23 +32,94 @@
                     verblijf.
                 </p>
             </div>
+        </a>
         {/each}
     </article>
 </div>
 
-<!-- 
-<h1>Hotels</h1>
-<div class="grid">
-  {#each hotels as hotel}
-    <div class="card">
-      <h2>{hotel.HotelInfo.Name}</h2>
-      <p>{hotel.HotelInfo.Address.City}, {hotel.HotelInfo.Address.Country}</p>
-      <a href="/hotel/{hotel.HotelInfo.HotelID}">Bekijk details</a>
-      <p>{hotel.Reviews[0].Content.substring(0, 150)}...</p>
-    </div>
-  {/each}
-</div> -->
-
 <style>
+    .container {
+        padding: 2em;
+    }
 
+    article {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2em;
+    }
+
+    a{
+        text-decoration: none;
+    }
+
+    .all-info {
+        background-color: #fff;
+        border-radius: 0.5em;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        box-shadow: 0 0px 5px var(--primary-color);
+    }
+
+    .hotel-info {
+        @media (min-width: 600px) {
+            display: grid;
+            grid-template-columns: 1fr max-content max-content;
+            gap: 1em;
+        }
+
+        @media (min-width: 600px) {
+            display: unset;
+        }
+    }
+
+    .info-extra{
+        display: flex;
+        gap: 1em;
+        margin: 0em 1em;
+    }
+
+    img {
+        border-radius: 0.5em;
+        object-fit: cover;
+        width: 100%;
+        height: auto;
+        margin: 0em 0em 1em 0em;
+    }
+
+    h2 {
+        font-size: var(--font-size-large, 1.5em);
+        margin: 0em 1em;
+        color: var(--primary-color);
+    }
+
+    .available {
+        background-color: var(--color-success);
+        color: var(--secondary-color);
+        padding: 0.5em;
+        font-size: var(--font-size-small);
+        max-width: fit-content;
+        height: fit-content;
+        display: flex;
+        align-items: center;
+    }
+
+    .price {
+        background-color: var(--color-price);
+        color: var(--secondary-color);
+        padding: 0.5em;
+        font-size: var(--font-size-small);
+        max-width: fit-content;
+        height: fit-content;
+    }
+
+    .description {
+        font-size: var(--font-size-small);
+        color: var(--primary-color);
+        display: -webkit-box;
+        -webkit-line-clamp: 3; 
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        margin: 1em;
+    }
 </style>
