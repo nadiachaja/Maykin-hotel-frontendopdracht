@@ -1,7 +1,7 @@
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ fetch }) {
 
-    const hotelIds = [100407, 100504, 100505, 100507, 100508, 100509, 100513]; 
+    const hotelIds = [100407, 100504, 100505, 100507, 100508, 100509, 100527]; 
 
     const fetchPromises = hotelIds.map(async (id) => {
         try {

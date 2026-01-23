@@ -53,12 +53,14 @@
     }
 
     .all-info {
-        background-color: #fff;
+        background-color: var(--secondary-color);
         border-radius: 0.5em;
         display: flex;
         flex-direction: column;
         align-items: start;
         box-shadow: 0 0px 5px var(--primary-color);
+        height: 100%;
+        justify-content: space-between;
     }
 
     .hotel-info {
@@ -88,9 +90,10 @@
     }
 
     h2 {
-        font-size: var(--font-size-large, 1.5em);
+        font-size: var(--font-size-large);
         margin: 0em 1em;
         color: var(--primary-color);
+        font-weight: var(--font-weight-bold);
     }
 
     .available {
