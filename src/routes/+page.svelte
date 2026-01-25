@@ -3,7 +3,7 @@
     const { hotels } = data;
     import outsidehotelJPG from "$lib/assets/hotels.jpg";
     import outsidehotelWEBP from "$lib/assets/hotels.webp";
-    import outsidehotelAVIF from "$lib/assets/hotels.avif";
+    // import outsidehotelAVIF from "$lib/assets/hotels.avif";
 </script>
 
 <svelte:head>
@@ -14,11 +14,11 @@
 <div class="container">
     <article>
         {#each hotels as hotel}
-            <a href="/hotel/{hotel.id}">
+        <a href="/hotel/{hotel.HotelInfo.HotelID}">
                 <div class="all-info">
 
                     <picture>
-                        <source srcSet={outsidehotelAVIF} type="image/avif" />
+                        <!-- <source srcSet={outsidehotelAVIF} type="image/avif" /> -->
                         <source srcSet={outsidehotelWEBP} type="image/webp" />
                         <img
                           src={outsidehotelJPG}
