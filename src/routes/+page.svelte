@@ -1,6 +1,7 @@
 <script>
     export let data;
     const { hotels } = data;
+    import { goto } from "$app/navigation"; //voor de navigatie
     import outsidehotelJPG from "$lib/assets/hotels.jpg";
     import outsidehotelWEBP from "$lib/assets/hotels.webp";
     // import outsidehotelAVIF from "$lib/assets/hotels.avif";
@@ -14,28 +15,27 @@
 <div class="container">
     <article>
         {#each hotels as hotel}
-        <a href="/hotel/{hotel.HotelInfo.HotelID}">
+            <a href="/hotel/{hotel.HotelInfo.HotelID}">
                 <div class="all-info">
-
                     <picture>
                         <!-- <source srcSet={outsidehotelAVIF} type="image/avif" /> -->
                         <source srcSet={outsidehotelWEBP} type="image/webp" />
                         <img
-                          src={outsidehotelJPG}
-                          alt="Outside hotel"
-                          width="300"
-                          height="200"
+                            src={outsidehotelJPG}
+                            alt="Outside hotel"
+                            width="300"
+                            height="200"
                         />
-                      </picture>
+                    </picture>
 
                     <!-- <img src={outsidehotel} alt="" height="200" width="300" /> -->
-                        <h2>{hotel.HotelInfo.Name}</h2>
-                        <div class="info-extra">
-                            <p class="available">Available</p>
-                            <p class="price">
-                                {hotel.HotelInfo.Price.replace("*", "")}
-                            </p>
-                        </div>
+                    <h2>{hotel.HotelInfo.Name}</h2>
+                    <div class="info-extra">
+                        <p class="available">Available</p>
+                        <p class="price">
+                            {hotel.HotelInfo.Price.replace("*", "")}
+                        </p>
+                    </div>
                     <p class="description">
                         Dit hotel biedt moderne en comfortabele accommodaties,
                         ideaal voor zowel zakelijke reizigers als
@@ -50,6 +50,77 @@
         {/each}
     </article>
 </div>
+
+<nav>
+    <ul>
+        <!-- alleen zichtbaar als je niet op de eerste pagina zit -->
+        {#if Number(data.page) > 1}
+            <li>
+                <button
+                    class="navigation-btn"
+                    onclick={() => goto(`/?page=${Number(data.page) - 1}`)}
+                    aria-label="Previous page"
+                >
+                    Previous
+                </button>
+            </li>
+        {/if}
+
+        <!-- pagina 1 -->
+        {#if Number(data.page) > 1}
+            <li>
+                <button onclick={() => goto("/?page=1")}>1</button>
+            </li>
+        {/if}
+
+        <!-- pagina 2 en hoger -->
+        {#if Number(data.page) > 2}
+            <li>
+                <button onclick={() => goto(`/?page=${Number(data.page) - 1}`)}>
+                    {Number(data.page) - 1}
+                </button>
+            </li>
+        {/if}
+
+        <!-- als je op een pagina ziet dan kan je niet meer op de pagina klikken -->
+        <li>
+            <button class="active" disabled>
+                {data.page}
+            </button>
+        </li>
+
+        <!-- laat 2 pagina zien bij previous-->
+        {#if Number(data.page) < data.totalPages - 1}
+            <li>
+                <button onclick={() => goto(`/?page=${Number(data.page) + 1}`)}>
+                    {Number(data.page) + 1}
+                </button>
+            </li>
+        {/if}
+
+        <!-- laatste pagina-->
+        {#if Number(data.page) < data.totalPages}
+            <li>
+                <button onclick={() => goto(`/?page=${data.totalPages}`)}>
+                    {data.totalPages}
+                </button>
+            </li>
+        {/if}
+
+        <!-- alleen zichtbaar als je niet op de laatste pagina zit -->
+        {#if Number(data.page) < data.totalPages}
+            <li>
+                <button
+                    class="navigation-btn"
+                    onclick={() => goto(`/?page=${Number(data.page) + 1}`)}
+                    aria-label="Next page"
+                >
+                    Next
+                </button>
+            </li>
+        {/if}
+    </ul>
+</nav>
 
 <style>
     .container {
@@ -85,7 +156,7 @@
     }
 
     img {
-        border-radius: .5em .5em 0em 0em;
+        border-radius: 0.5em 0.5em 0em 0em;
         object-fit: cover;
         width: 100%;
         height: auto;
@@ -127,5 +198,26 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
         margin: 1em;
+    }
+
+    ul {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        padding: 1em;
+        gap: 0.5em;
+        align-items: center;
+    }
+
+    button {
+        padding: 1em;
+        border: none;
+        background-color: var(--primary-color);
+        color: var(--secondary-color);
+        border-radius: 0.5em;
+    }
+
+    .active:disabled {
+        background-color: var(--disabled-color);
     }
 </style>

@@ -20,6 +20,7 @@
 :root {
     --primary-color: #222222;
     --secondary-color: #ffffff;
+    --disabled-color: #7e7e7e;
     --color-neural: #E7ECEF;
     --color-bg-accent: #F7F7F7;
     --color-error: #D22E45;
