@@ -72,7 +72,8 @@
         display: flex;
         flex-direction: column;
         align-items: start;
-        box-shadow: 0 0px 5px var(--primary-color);
+        box-shadow: var(--box-shadow);
+        border: var(--border);
         height: 100%;
         justify-content: space-between;
     }

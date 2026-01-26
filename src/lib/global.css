@@ -34,11 +34,15 @@
     --font-size-extra-large: 2em;
     --font-size-large: 1.5em;
     --font-size-medium: 1.25em;
+    --font-size-medium-small: 1.15em;
     --font-size-small: 1em;
 
     --font-weight-normal:500;
     --font-weight-semi-bold:600;
     --font-weight-bold:700;
+
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --border: 1px solid #eee;
 
 }
 
