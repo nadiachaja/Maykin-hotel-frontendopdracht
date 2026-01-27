@@ -240,6 +240,12 @@
         border: none;
         font-size: var(--font-size-medium-small);
         border-radius: 1em;
+
+        &:focus {
+            outline: 3px solid var(--color-cta);
+            outline-offset: .2em;
+
+		}
     }
 
     .container-rooms {

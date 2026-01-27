@@ -134,6 +134,13 @@
 
     a {
         text-decoration: none;
+        outline: none;
+
+        &:focus {
+            outline: 3px solid var(--primary-color);
+            outline-offset: .5em;
+
+		}
     }
 
     .all-info {
@@ -153,15 +160,7 @@
         gap: 1em;
         margin: 0em 1em;
     }
-    /* 
-    img {
-        border-radius: 0.5em 0.5em 0em 0em;
-        object-fit: cover;
-        width: 100%;
-        height: auto;
-        margin: 0em 0em 1em 0em;
-    } */
-
+    
     picture {
         display: block;
         width: 100%;

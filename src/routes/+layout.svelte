@@ -27,14 +27,17 @@
 		margin: 1em;
 		padding: 1em;
 		background-color: var(--color-cta);
-		border-radius: .5em;
+		border-radius: 0.5em;
 		color: var(--secondary-color);
 		text-decoration: none;
 		transform: translateY(-200%);
 		transition: transform 0.3s;
+		outline: none;
 
 		&:focus {
 			transform: translate(0%);
+			outline: 3px solid var(--color-cta);
+			outline-offset: 0.2em;
 		}
 	}
 
@@ -44,8 +47,15 @@
 		padding: 0.5em;
 	}
 
-	a {
+	header a {
+		display: inline-block;
 		text-decoration: none;
+		outline: none;
+	}
+
+	a:focus {
+		outline: 3px solid var(--secondary-color);
+		outline-offset: 0.2em; 
 	}
 
 	h1 {
