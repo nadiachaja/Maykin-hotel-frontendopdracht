@@ -179,14 +179,14 @@
 
     h2 {
         font-size: var(--font-size-large);
-        margin: 0em 1em;
+        margin: 1em 1em 0em;
         color: var(--primary-color);
         font-weight: var(--font-weight-bold);
     }
 
     .available {
         background-color: var(--color-success);
-        color: var(--secondary-color);
+        color: var(--primary-color);
         padding: 0.5em;
         font-size: var(--font-size-small);
         max-width: fit-content;
@@ -197,7 +197,7 @@
 
     .price {
         background-color: var(--color-price);
-        color: var(--secondary-color);
+        color: var(--primary-color);
         padding: 0.5em;
         font-size: var(--font-size-small);
         max-width: fit-content;
