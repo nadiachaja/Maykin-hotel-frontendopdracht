@@ -12,6 +12,8 @@
      vooral de netheid en de vriendelijke sfeer die ons team dagelijks verzorgt.`;
 
     import hotelroomJPG from "$lib/assets/hotelroom.jpg";
+    import hotelroomAVIF from "$lib/assets/hotelroom.avif";
+    import hotelroomWEBP from "$lib/assets/hotelroom.webp";
 </script>
 
 <svelte:head>
@@ -41,11 +43,18 @@
 
             <aside class="booking-sidebar">
                 <article class="main-card">
-                    <img
-                        class="hotel-room-img"
-                        src={hotelroomJPG}
-                        alt={hotel.HotelInfo.Name}
-                    />
+                    <picture>
+                        <source srcSet={hotelroomAVIF} type="image/avif" />
+                        <source srcSet={hotelroomWEBP} type="image/webp" />
+                        <img
+                            class="hotel-room-img"
+                            src={hotelroomJPG}
+                            alt={hotel.HotelInfo.Name}
+                            width="300"
+                            height="200"
+                            fetchpriority="high"
+                        />
+                    </picture>
                     <div class="card-info">
                         <h3>{hotel.HotelInfo.Name}</h3>
                         <p class="main-price">
@@ -61,13 +70,18 @@
 
         <div class="container-rooms">
             <article class="room-card">
-                <img
-                    class="hotel-room-img"
-                    src={hotelroomJPG}
-                    alt=""
-                    height="150"
-                    width="250"
-                />
+                <picture>
+                    <source srcSet={hotelroomAVIF} type="image/avif" />
+                    <source srcSet={hotelroomWEBP} type="image/webp" />
+                    <img
+                        class="hotel-room-img"
+                        src={hotelroomJPG}
+                        alt={hotel.HotelInfo.Name}
+                        height="150"
+                        width="250"
+                        fetchpriority="high"
+                    />
+                </picture>
                 <div class="room-info">
                     <h4>Standard room</h4>
                     <p class="room-description">
@@ -83,13 +97,18 @@
             </article>
 
             <article class="room-card">
-                <img
-                    class="hotel-room-img"
-                    src={hotelroomJPG}
-                    alt=""
-                    height="150"
-                    width="250"
-                />
+                <picture>
+                    <source srcSet={hotelroomAVIF} type="image/avif" />
+                    <source srcSet={hotelroomWEBP} type="image/webp" />
+                    <img
+                        class="hotel-room-img"
+                        src={hotelroomJPG}
+                        alt={hotel.HotelInfo.Name}
+                        height="150"
+                        width="250"
+                        fetchpriority="high"
+                    />
+                </picture>
                 <div class="room-info">
                     <h4>Luxe Suite</h4>
                     <p class="room-description">
@@ -105,13 +124,18 @@
             </article>
 
             <article class="room-card">
-                <img
-                    class="hotel-room-img"
-                    src={hotelroomJPG}
-                    alt=""
-                    height="150"
-                    width="250"
-                />
+                <picture>
+                    <source srcSet={hotelroomAVIF} type="image/avif" />
+                    <source srcSet={hotelroomWEBP} type="image/webp" />
+                    <img
+                        class="hotel-room-img"
+                        src={hotelroomJPG}
+                        alt={hotel.HotelInfo.Name}
+                        height="150"
+                        width="250"
+                        fetchpriority="high"
+                    />
+                </picture>
                 <div class="room-info">
                     <h4>Deluxe Sea View Room</h4>
                     <p class="room-description">

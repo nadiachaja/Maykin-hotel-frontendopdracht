@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit'; 
-
+export const ssr = true;
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ fetch, params }) {
     const { id } = params;
