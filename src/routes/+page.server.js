@@ -1,4 +1,5 @@
 /** @type {import('./$types').PageServerLoad} */
+export const ssr = true;
 export async function load({ fetch, url }) {
 
     const page = Number(url.searchParams.get('page')) || 1; //huidige pagina bepalen

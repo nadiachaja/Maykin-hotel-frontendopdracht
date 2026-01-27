@@ -4,7 +4,7 @@
     import { goto } from "$app/navigation"; //voor de navigatie
     import outsidehotelJPG from "$lib/assets/hotels.jpg";
     import outsidehotelWEBP from "$lib/assets/hotels.webp";
-    // import outsidehotelAVIF from "$lib/assets/hotels.avif";
+    import outsidehotelAVIF from "$lib/assets/hotels.avif";
 </script>
 
 <svelte:head>
@@ -18,17 +18,16 @@
             <a href="/hotel/{hotel.HotelInfo.HotelID}">
                 <div class="all-info">
                     <picture>
-                        <!-- <source srcSet={outsidehotelAVIF} type="image/avif" /> -->
+                        <source srcSet={outsidehotelAVIF} type="image/avif" />
                         <source srcSet={outsidehotelWEBP} type="image/webp" />
                         <img
                             src={outsidehotelJPG}
                             alt="Outside hotel"
                             width="300"
                             height="200"
+                            fetchpriority=high
                         />
                     </picture>
-
-                    <!-- <img src={outsidehotel} alt="" height="200" width="300" /> -->
                     <h2>{hotel.HotelInfo.Name}</h2>
                     <div class="info-extra">
                         <p class="available">Available</p>
@@ -146,7 +145,7 @@
         box-shadow: var(--box-shadow);
         border: var(--border);
         height: 100%;
-        justify-content: space-between;
+        justify-content: flex-start;
     }
 
     .info-extra {
@@ -154,12 +153,28 @@
         gap: 1em;
         margin: 0em 1em;
     }
-
+    /* 
     img {
         border-radius: 0.5em 0.5em 0em 0em;
         object-fit: cover;
         width: 100%;
         height: auto;
+        margin: 0em 0em 1em 0em;
+    } */
+
+    picture {
+        display: block;
+        width: 100%;
+        aspect-ratio: 3 / 2;
+        overflow: hidden;
+        border-radius: 0.5em 0.5em 0em 0em;
+    }
+
+    picture img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
         margin: 0em 0em 1em 0em;
     }
 
@@ -198,6 +213,7 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
         margin: 1em;
+        margin-top: auto;
     }
 
     ul {
