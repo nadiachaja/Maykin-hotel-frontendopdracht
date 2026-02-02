@@ -154,21 +154,7 @@
         {/if}
 
 
-<section class="reviews-section">
-    <h5>Reviews</h5>
 
-    <ul class="reviews-list">
-        {#each hotel.Reviews as review}
-            <li class="review-item">
-                <strong class="review-title">{review.Title.replace(
-                    "underfined",
-                )}</strong>
-                <p class="name-date"><strong>{review.Author}</strong> – {review.Date}</p>
-                <p class="review-content">{review.Content}</p>
-            </li>
-        {/each}
-    </ul>
-</section>
 
 
     </div>
@@ -176,33 +162,6 @@
 
 <style>
 
-h5{
-    font-size: var(--font-size-medium-small);
-}
-
-.reviews-list{
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    padding: 0em;
-
-    @media (min-width: 700px) {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-        }
-
-
-    @media (min-width: 1280px) {
-            grid-template-columns: 1fr 1fr 1fr;
-        }
-}
-
-.review-item{
-    list-style: none;
-    background-color: var(--color-neural);
-    padding: 1em;
-    border-radius: 0.5em;
-}
 
 
 
