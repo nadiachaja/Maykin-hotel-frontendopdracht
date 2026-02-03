@@ -154,19 +154,19 @@
     <section class="reviews-section">
         <h5>Reviews</h5>
 
-        <ul class="reviews-list">
-            {#each hotel.Reviews as review}
-                <li class="review-item">
-                    <strong class="review-title"
-                        >{review.Title.replace("underfined")}</strong
-                    >
+        <div class="reviews-list">
+            {#each hotel.Reviews.slice(0, 10) as review}
+                <details class="review-item">
+                    <summary class="review-title">
+                        {review.Title?.replace("underfined", "")}
+                    </summary>
                     <p class="name-date">
                         <strong>{review.Author}</strong> – {review.Date}
                     </p>
                     <p class="review-content">{review.Content}</p>
-                </li>
+                </details>
             {/each}
-        </ul>
+        </div>
     </section>
 </div>
 
@@ -320,5 +320,22 @@
         background-color: var(--color-neural);
         padding: 1em;
         border-radius: 0.5em;
+    }
+
+    details summary {
+        list-style: none;
+    }
+
+    details summary::after {
+        content: "Read more";
+        display: flex;
+        font-weight: var(--font-weight-bold);
+        color: var(--primary-color);
+        text-decoration: underline;
+    }
+
+    details[open] summary::after {
+        content: "Read less";
+        text-decoration: underline;
     }
 </style>
