@@ -14,12 +14,11 @@ Platform voor het bekijken van hotels en pakketreizen. Gebruikers kunnen hotels 
 
   ## Installatie
 1. Open een code editor programma
-2. Maak een branch van de dev_bak zodat je niet het huidige project aantast
-3. Clone de code van de repository dev_bak branch en zorg dat je 'contribute for my own purposes' aanklikt.
-4. Ga naar de command line in het project en klik de toetsen " ` + CTRL " in.
-5. Type in "npm install" zodat je de nodige dependencies download.
-6. Type in "npm run dev" zodat het project kan gestart worden.
-7. Klik op de local host en je ziet het project.
+2. Clone de code van de repository main branch en zorg dat je 'contribute for my own purposes' aanklikt.
+3. Gebruik de main branche of maak een feature branche aan.
+4. Type in "npm install" zodat je de nodige dependencies download.
+5. Type in "npm run dev" of "npm run dev -- --open" zodat het project kan gestart worden.
+6. Klik op de local host als je npm run dev hebt gedaan en je ziet het project of het project start automatische op met npm run -- --open.
 
 ## Technische stack
 ![SvelteKit 5](https://img.shields.io/badge/SvelteKit-5-FF3E00?style=flat&logo=svelte&logoColor=white)
